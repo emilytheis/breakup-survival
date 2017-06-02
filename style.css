@@ -11,7 +11,7 @@
 html {
     color: #000000;
     font-size: 1em;
-    line-height: 1.5;
+    line-height: 1.6;
     font-family: "freight-text-pro", serif;
     font-weight: 500;
 }
@@ -25,7 +25,7 @@ html {
  */
 
 ::selection {
-    background: #F25360;
+    background: #E25C5C;
 }
 
 /*
@@ -78,7 +78,7 @@ textarea {
    Author's custom styles
    ========================================================================== */
 body {
-    background-color: #FFF3E7;
+    background-color: #F5F0EC;
     margin: 8em 10%;
 }
 .content-container {
@@ -89,7 +89,7 @@ body {
     border-radius: .7em;
 }
 
-.content-container-2 {
+.intro-container {
     max-width: 800px;
     margin: auto;
     padding: 1.5em;
@@ -102,7 +102,7 @@ body {
     width: 100%;
 }
 .logo-fill {
-    fill: #F25360;
+    fill: #E25C5C;
 }
 .logo:hover .logo-fill { 
     fill: black;
@@ -153,7 +153,7 @@ body {
 }
 
 .category-name {
-    color: #F25360;
+    color: #E25C5C;
 }
 
 .suggester {
@@ -172,7 +172,7 @@ body {
     float: left;
     margin-top: 1em;
     border-radius: .4em;
-    background: #F25360;
+    background: #E25C5C;
     padding: 1em
 }
 
@@ -187,7 +187,7 @@ a{
 }
 
 a:hover {
-    color: #F25360;
+    color: #E25C5C;
     border-bottom: .5px solid;
     text-decoration-line: none;
 }
