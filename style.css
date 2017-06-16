@@ -194,6 +194,9 @@ a:hover {
 
 #loading {
     text-align: center;
+}
+
+#content {
     display: none;
 }
 
