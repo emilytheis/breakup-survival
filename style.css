@@ -81,12 +81,29 @@ body {
     background-color: #F5F0EC;
     margin: 8em 10%;
 }
-.card {
+
+/* Emily adds CSS looping animation here */
+
+.beating-hearts-baby {}
+
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes */
+
+@keyframes beatingHeartsBaby {}
+
+/* end Emily's CSS animation */
+
+.content-container {
     max-width: 800px;
     margin: auto;
     background-color: white;
     padding: 3em;
     border-radius: .7em;
+    transition: all 0.3s ease-in;
+    opacity: 1;
+}
+
+.beating-hearts-baby .content-container {
+    opacity: 0;
 }
 
 .intro-container {
