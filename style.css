@@ -25,7 +25,7 @@ html {
  */
 
 ::selection {
-    background: #E25C5C;
+    background: #E4A0A0;
 }
 
 /*
@@ -81,11 +81,11 @@ body {
     background-color: #F5F0EC;
     margin: 8em 10%;
 }
-.content-container {
+.card {
     max-width: 800px;
     margin: auto;
     background-color: white;
-    padding: 1.5em;
+    padding: 3em;
     border-radius: .7em;
 }
 
