@@ -79,7 +79,7 @@ textarea {
    ========================================================================== */
 body {
     background-color: #F5F0EC;
-    margin: 6.5em 10% 2.5em 10%;
+    margin: 8em 10% 2.5em 10%;
 }
 
 /* Emily adds CSS looping animation here */
@@ -113,16 +113,30 @@ body {
     padding: 1.5em;
     border-radius: .7em;
 }
+
 .logo {
     position: absolute;
     float: left;
     left: 0;
     top: 2.5em;
-    width: 100%;
+    left: 40%;
 }
+
+.try-this {
+    position: absolute;
+    float: left;
+    left: 40%;
+    top: 2.5em;
+}
+
+.logo-link:focus .logo-fill {
+    fill:black;
+}
+
 .logo-fill {
     fill: #E25C5C;
 }
+
 .logo:hover .logo-fill { 
     fill: black;
 } 
@@ -130,7 +144,7 @@ body {
 /* PAGE HEADINGS */
 
 .suggestion {
-    font-size: 2.7em;
+    font-size: 2.6em;
     line-height: 1.1; 
     margin-top: .3em;
     margin-bottom: 0em;
@@ -161,15 +175,13 @@ body {
     text-transform: uppercase;
     font-weight: 900;
     letter-spacing: .05em;
+    font-size:.85em;
 }
-.category,
+.category-name,
 .name {
     font-weight: 900;
 }
 
-.category-name {
-    color: #E25C5C;
-}
 
 .suggester {
     margin-top: 1.5em;
@@ -180,29 +192,66 @@ body {
     margin-left: .75em;
     font-size: .9em;
 }
-.next-suggestion {
-    font-size: 1 em;
-    line-height: 1em;
+.next-suggestion:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: -11vw;
+    height: 11vw;
+    background-image: linear-gradient(to bottom,rgba(255,255,255,0),white 70%);
+}
+
+.next-suggestion, 
+.get-started {
+    font-size: 1em;
+    line-height: 1.3em;
     font-weight: 700;
     color: #FFFFFF;
     text-decoration: none;
     border: none;
     background-color: #E25C5C;
+    text-align: center;
+    outline: none;
+}
+
+.next-suggestion {
     display: block;
-    width: 100%;
     padding-top: 1.1em;
     padding-bottom: 1.1em;
     position: fixed;
     bottom: 0;
     left: 0;
-    text-align: center;
-    outline: none;
+    width: 100%;
 }
 
-.next-suggestion:hover { 
+.get-started {
+    display: inline-block;
+    margin-top: .5em;
+    padding: 1em 3em;
+    border-radius: .5em;
+}
+
+.next-suggestion:hover,
+.next-suggestion:focus,
+.get-started:hover,
+.get-started:focus { 
     background-color: #D13F3F;
     color: #FFFFFF;
 } 
+
+.footnote,
+.footnote-link,
+.footnote-link:visited {
+    font-size: 1em;
+    margin-top: 2.5em;
+    color: black;
+    font-style: italic;
+}
+.footnote-link:hover {
+    color: #E25C5C;
+}
 
 
 /* ==========================================================================
@@ -323,8 +372,20 @@ body {
         padding-bottom: 1.4em;
     }
     .description {
-    font-size: 1.4em;
+    font-size: 1.3em;
 }
+    .next-suggestion:before {
+    top: -7vw;
+    height: 7vw;
+    }
+
+    .category, 
+    .suggester,
+    .next-suggestion,
+    .get-started {
+        font-size: 1em;
+    }
+
 
 
 /* ==========================================================================
