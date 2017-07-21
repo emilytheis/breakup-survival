@@ -5,7 +5,7 @@
  */
 
 /* ==========================================================================
-   Base styles: opinionated defaults
+   Base styles
    ========================================================================== */
 
 html {
@@ -18,10 +18,6 @@ html {
 
 /*
  * Remove text-shadow in selection highlight:
- * https://twitter.com/miketaylr/status/12228805301
- *
- * These selection rule sets have to be separate.
- * Customize the background color to match your design.
  */
 
 ::selection {
@@ -75,14 +71,38 @@ textarea {
 }
 
 /* ==========================================================================
-   Author's custom styles
+   Global
    ========================================================================== */
 body {
     background-color: #F5F0EC;
-    margin: 8em 10% 2.5em 10%;
+    margin: 7.5em 8% 2.5em 8%;
+}
+ul {
+    font-size: 1.2em;
 }
 
-/* Emily adds CSS looping animation here */
+a[href]:not([class]), 
+.back {
+    font-size: .9em;
+    margin-top: 2.5em;
+    color: black;
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+}
+
+.back {
+    font-size: .8em;
+}
+
+a[href]:not([class]):hover,
+.back:hover {
+    color: #E25C5C;
+}
+
+
+
+/* Emily maybe adds CSS looping animation here */
 
 .beating-hearts-baby {}
 
@@ -114,19 +134,14 @@ body {
     border-radius: .7em;
 }
 
+/* LOGO STYLES */
+
 .logo {
     position: absolute;
     float: left;
     left: 0;
     top: 2.5em;
-    left: 40%;
-}
-
-.try-this {
-    position: absolute;
-    float: left;
-    left: 40%;
-    top: 2.5em;
+    left: 41%;
 }
 
 .logo-link:focus .logo-fill {
@@ -177,11 +192,11 @@ body {
     letter-spacing: .05em;
     font-size:.85em;
 }
+
 .category-name,
 .name {
     font-weight: 900;
 }
-
 
 .suggester {
     margin-top: 1.5em;
@@ -192,6 +207,7 @@ body {
     margin-left: .75em;
     font-size: .9em;
 }
+
 .next-suggestion:before {
     content: '';
     display: block;
@@ -205,10 +221,10 @@ body {
 
 .next-suggestion, 
 .get-started {
-    font-size: 1em;
+    display: block;
     line-height: 1.3em;
     font-weight: 700;
-    color: #FFFFFF;
+    color: white;
     text-decoration: none;
     border: none;
     background-color: #E25C5C;
@@ -217,7 +233,6 @@ body {
 }
 
 .next-suggestion {
-    display: block;
     padding-top: 1.1em;
     padding-bottom: 1.1em;
     position: fixed;
@@ -226,11 +241,13 @@ body {
     width: 100%;
 }
 
-.get-started {
-    display: inline-block;
-    margin-top: .5em;
-    padding: 1em 3em;
+.get-started, 
+.get-started:visited {
+    display: block;
+    margin-top: 1.5em;
+    padding: 1em 2em;
     border-radius: .5em;
+    color: white; 
 }
 
 .next-suggestion:hover,
@@ -241,17 +258,6 @@ body {
     color: #FFFFFF;
 } 
 
-.footnote,
-.footnote-link,
-.footnote-link:visited {
-    font-size: 1em;
-    margin-top: 2.5em;
-    color: black;
-    font-style: italic;
-}
-.footnote-link:hover {
-    color: #E25C5C;
-}
 
 
 /* ==========================================================================
@@ -337,13 +343,10 @@ body {
 }
 
 /* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
+   Media Queries
    ========================================================================== */
 
 @media only screen and (min-width: 850px) {
-/* Style adjustments for viewports that meet the condition */
     .logo {
         position: fixed;
           top: 2.5em;
@@ -444,30 +447,3 @@ body {
         border: 1px solid #999;
         page-break-inside: avoid;
     }
-
-    /*
-     * Printing Tables:
-     * http://css-discuss.incutio.com/wiki/Printing_Tables
-     */
-
-    thead {
-        display: table-header-group;
-    }
-
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
-
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
-
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
-}
