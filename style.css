@@ -75,7 +75,7 @@ textarea {
    ========================================================================== */
 body {
     background-color: #F5F0EC;
-    margin: 7.5em 8% 2.5em 8%;
+    margin: 8em 5% 2.5em 5%;
 }
 
 ul {
@@ -235,8 +235,8 @@ a[href]:not([class]):hover,
 }
 
 .next-suggestion {
-    padding-top: 1.1em;
-    padding-bottom: 1.1em;
+    padding-top: 1.3em;
+    padding-bottom: 1.3em;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -374,8 +374,6 @@ a[href]:not([class]):hover,
     }
     .next-suggestion {
         font-size: 1.1em;
-        padding-top: 1.4em;
-        padding-bottom: 1.4em;
     }
     .description {
     font-size: 1.3em;
