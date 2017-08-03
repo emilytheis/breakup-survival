@@ -177,6 +177,14 @@ a[href]:not([class]):hover,
 
 /* CONTENT */
 
+.footnote {
+    padding-top: 1em;
+}
+
+a.footnote {
+    font-family: "freight-display-pro"
+}
+
 .comment {
     font-size: 1.2em;
 }
@@ -247,7 +255,7 @@ a[href]:not([class]):hover,
 .get-started, 
 .get-started:visited {
     display: block;
-    margin-top: 1.5em;
+    margin-top: 2em;
     padding: 1em 2em;
     border-radius: .5em;
     color: white; 
