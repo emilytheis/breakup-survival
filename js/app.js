@@ -1,5 +1,5 @@
 $(document).ready(function($) {
-  var tabletopData;
+  var googleSheetJSON;
 
   // This is a click event that allows us to trigger the randomize data funtion
   $('.js--next-suggestion').on('click', function(event) {
@@ -9,24 +9,22 @@ $(document).ready(function($) {
       opacity: 0
     }, 500, 'easeOutExpo', 
     function() {
-      randomizeData(tabletopData);
+      randomizeData(googleSheetJSON);
       $('.animate-content').transition({ opacity: 1 });
     }); 
   });
 
   // This initially gets the data from the spreadheet and transforms it into an object
   function getCardData() {
-    Tabletop.init( { key: 'https://docs.google.com/spreadsheets/d/1ZqCUv_Ps0lHS0_I8Onk_xcdP9ThUS2ALtmxre5o7h5Q/pub?output=csv',
-    
-    callback: function(data, tabletop) {
-      tabletopData = data;
-      randomizeData(tabletopData);
+    $.getJSON('https://spreadsheets.google.com/feeds/list/1ZqCUv_Ps0lHS0_I8Onk_xcdP9ThUS2ALtmxre5o7h5Q/od6/public/values?alt=json',
+      function(data){
+        googleSheetJSON = data.feed.entry;
+        randomizeData(googleSheetJSON);
+    });
 
-      if($('.beating-hearts-baby').length) {
-        $('body').removeClass('beating-hearts-baby');
-      }
-    },
-    simpleSheet: true } );
+    if($('.beating-hearts-baby').length) {
+      $('body').removeClass('beating-hearts-baby');
+    }
   }
 
   // Randomize 
@@ -34,7 +32,14 @@ $(document).ready(function($) {
     var dbRow = Math.random() * (data.length - 1) + 1;
     
     dbRow = Math.round(dbRow);
-    var suggestionData = data[dbRow];
+    var jsonRow = data[dbRow];
+    var suggestionData = {
+      type: data[dbRow].gsx$type.$t,
+      name: data[dbRow].gsx$name.$t,
+      suggestion: data[dbRow].gsx$suggestion.$t,
+      comment: data[dbRow].gsx$comment.$t,
+    };
+
     var elements = ['type', 'name', 'suggestion', 'comment'];
 
     // Grab the content and put 'er in
