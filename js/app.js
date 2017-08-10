@@ -1,5 +1,5 @@
 $(document).ready(function($) {
-  var googleSheetJSON;
+  var tabletopData;
 
   // This is a click event that allows us to trigger the randomize data funtion
   $('.js--next-suggestion').on('click', function(event) {
@@ -7,9 +7,9 @@ $(document).ready(function($) {
 
     $('.animate-content').transition({
       opacity: 0
-    }, 500, 'easeOutExpo',
+    }, 500, 'easeOutExpo', 
     function() {
-      randomizeData(googleSheetJSON);
+      randomizeData(tabletopData);
       $('.animate-content').transition({ opacity: 1 });
     });
   });
@@ -34,14 +34,7 @@ $(document).ready(function($) {
     var dbRow = Math.random() * (data.length - 1) + 1;
 
     dbRow = Math.round(dbRow);
-    var jsonRow = data[dbRow];
-    var suggestionData = {
-      type: data[dbRow].gsx$type.$t,
-      name: data[dbRow].gsx$name.$t,
-      suggestion: data[dbRow].gsx$suggestion.$t,
-      comment: data[dbRow].gsx$comment.$t,
-    };
-
+    var suggestionData = data[dbRow];
     var elements = ['type', 'name', 'suggestion', 'comment'];
 
     // Grab the content and put 'er in
