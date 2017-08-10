@@ -7,17 +7,17 @@ $(document).ready(function($) {
 
     $('.animate-content').transition({
       opacity: 0
-    }, 500, 'easeOutExpo', 
+    }, 500, 'easeOutExpo',
     function() {
       randomizeData(tabletopData);
       $('.animate-content').transition({ opacity: 1 });
-    }); 
+    });
   });
 
   // This initially gets the data from the spreadheet and transforms it into an object
   function getCardData() {
     Tabletop.init( { key: 'https://docs.google.com/spreadsheets/d/1ZqCUv_Ps0lHS0_I8Onk_xcdP9ThUS2ALtmxre5o7h5Q/pub?output=csv',
-    
+
     callback: function(data, tabletop) {
       tabletopData = data;
       randomizeData(tabletopData);
@@ -29,10 +29,10 @@ $(document).ready(function($) {
     simpleSheet: true } );
   }
 
-  // Randomize 
+  // Randomize
   function randomizeData(data) {
     var dbRow = Math.random() * (data.length - 1) + 1;
-    
+
     dbRow = Math.round(dbRow);
     var suggestionData = data[dbRow];
     var elements = ['type', 'name', 'suggestion', 'comment'];
