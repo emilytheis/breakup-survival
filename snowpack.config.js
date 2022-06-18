@@ -18,6 +18,7 @@ module.exports = {
     /* ... */
   },
   buildOptions: {
+    baseUrl: '/breakup-survival',
     // put the build files in /docs
     out: 'docs',
     // put the meta snowpack build files under snowpack instead of _snowpack since Github special-cases underscore prefixed folders
