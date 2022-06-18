@@ -1,5 +1,12 @@
+// const fs = require('fs');
+import Papa from "papaparse";
+// fs.readFile('../tips/breakup-survival-tips.csv', 'utf-8', (err, data) => {
+//   if(err) { throw err; }
+//   console.log('data: ', data);
+// });
+
 $(document).ready(function($) {
-  var tabletopData;
+  var breakupTipsData;
 
   // This is a click event that allows us to trigger the randomize data funtion
   $('.js--next-suggestion').on('click', function(event) {
@@ -9,24 +16,37 @@ $(document).ready(function($) {
       opacity: 0
     }, 500, 'easeOutExpo', 
     function() {
-      randomizeData(tabletopData);
+      randomizeData(breakupTipsData);
       $('.animate-content').transition({ opacity: 1 });
     });
   });
 
   // This initially gets the data from the spreadheet and transforms it into an object
   function getCardData() {
-    Tabletop.init( { key: 'https://docs.google.com/spreadsheets/d/1ZqCUv_Ps0lHS0_I8Onk_xcdP9ThUS2ALtmxre5o7h5Q/pub?output=csv',
+    // Tabletop.init( { key: 'https://docs.google.com/spreadsheets/d/1ZqCUv_Ps0lHS0_I8Onk_xcdP9ThUS2ALtmxre5o7h5Q/pub?output=csv',
+ 
+    // callback: function(data, tabletop) {
+    //   breakupTipsData = data;
+    //   randomizeData(breakupTipsData);
 
-    callback: function(data, tabletop) {
-      tabletopData = data;
-      randomizeData(tabletopData);
+    //   if($('.beating-hearts-baby').length) {
+    //     $('body').removeClass('beating-hearts-baby');
+    //   }
+    // },
+    // simpleSheet: true } );
 
-      if($('.beating-hearts-baby').length) {
-        $('body').removeClass('beating-hearts-baby');
+    Papa.parse('https://docs.google.com/spreadsheets/d/1ZqCUv_Ps0lHS0_I8Onk_xcdP9ThUS2ALtmxre5o7h5Q/pub?output=csv', {
+      download: true,
+      header: true,
+      complete: function(results) {
+        breakupTipsData = results.data
+        randomizeData(breakupTipsData);
+        
+        if($('.beating-hearts-baby').length) {
+          $('body').removeClass('beating-hearts-baby');
+        }
       }
-    },
-    simpleSheet: true } );
+    })
   }
 
   // Randomize

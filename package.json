@@ -4,7 +4,8 @@
     "papaparse": "^5.3.2"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "snowpack dev",
+    "build": "snowpack build"
   },
   "name": "breakup-survival",
   "description": "This site is a repository of things to do, watch, read, listen to, and think during times of heartache. It was inspired by the podcast Death Sex and Money's [Breakup](http://www.wnyc.org/story/cut-loose-breakups-death-sex-money/) episode and originally populated with suggestions from the show's listener-created Google Sheet [Breakup Survival Kit.](https://docs.google.com/spreadsheets/d/1M42gLZLANOxXxl9-N2MEYcw0FW9ng2fSRhaLtrMykw0/edit)",
@@ -19,5 +20,11 @@
   "bugs": {
     "url": "https://github.com/julialeague/breakup-survival/issues"
   },
-  "homepage": "https://github.com/julialeague/breakup-survival#readme"
+  "homepage": "https://github.com/julialeague/breakup-survival#readme",
+  "devDependencies": {
+    "connect-livereload": "^0.6.1",
+    "livereload": "^0.9.3",
+    "nodemon": "^2.0.16",
+    "snowpack": "^3.8.8"
+  }
 }
