@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html class="no-js" lang="en-US">
     <head>
@@ -38,7 +39,7 @@
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900|Source+Serif+Pro" rel="stylesheet">
 </head>
     <body class="beating-hearts-baby">
-    <a href="http://breakupsurvival.guide/" class="logo-link">
+    <a href="../" class="logo-link">
         <svg class="logo" width="71" height="55" viewBox="0 0 71 55" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <title>Breakup Survival Guide</title>
         <defs>
@@ -56,18 +57,22 @@
             <path class="logo-fill" mask="url(#d)" d="M-3.823-3.91h43.497v62.88H-3.823"/></g>
         </g>
         </svg>
-    </a>
-    <div class="intro-container">
-        <a class="back" href="http://breakupsurvival.guide"> Back to home </a>
-            <h2 class="subtitle"> What is this?</h2>
-                <p class="comment">This site cycles through one-at-a-time randomized suggestions for things to do, think, read, watch, and listen to while going through a breakup. It was inspired by the podcast <i>Death Sex and Money’s</i> Breakup <a href="http://www.wnyc.org/story/cut-loose-breakups-death-sex-money/">episode</a> and originally populated with suggestions from the show’s listener-created Google sheet <a href="https://docs.google.com/spreadsheets/d/1M42gLZLANOxXxl9-N2MEYcw0FW9ng2fSRhaLtrMykw0/edit">Breakup Survival Kit.</a> It uses the <a href="https://github.com/jsoma/tabletopTabletop.js"> Tabletop.js library </a> to access the Google Sheets API, serving up a randomized suggestion from this <a href="https://docs.google.com/spreadsheets/d/1RrHjz4goL9i8OlegZm9hqVluypc3LjNobOdCjVXdM7M/edit?usp=sharing"> slightly more curated list </a> of over 400 heartbreak cures. This site is updated weekly, so please add your suggestions to the original DSM speadsheet, or <a href="https://docs.google.com/forms/u/1/d/1gOWtev9fBu9fx0l-bsgrDWR7JB1GsNWi1A1Qr7v3atM/edit">submit them here. </a> 
-             <h2 class="subtitle"> Who made this? </h2>
-                <p class="comment"> Me, <a href="http://emilythe.is"> Emily Theis!</a>  I absolutely loved that DSM Breakup Survival Kit <a href="https://docs.google.com/spreadsheets/d/1M42gLZLANOxXxl9-N2MEYcw0FW9ng2fSRhaLtrMykw0/edit"> Google sheet.</a> The suggestions it contains are so human: intimate, funny, helpful, and sad. It fascinated me that there were <i>always</i> other people viewing it, since spreadsheets are not the most fun thing to browse. So I made this site to provide a more visual/simple way to click endlessly through all that wisdom. I hope it can help someone get through a difficult time. Send me an <a href=mailto:emilyjtheis@gmail.com>email</a> if you’d like to provide feedback or say hello. </p>
-            </p><h2 class="subtitle"> Thanks to </h2>
-                <ul> <li> <a href="https://github.com/RegisBiron"> Regis Biron,</a> <a href="https://github.com/ktbee">Katie Broida,</a> <a href="https://ericwbailey.design/">Eric Bailey</a>, and <a href="http://elainanatario.com/">Elaina Natario</a> for your internet-making help and general awesomeness.</a></li>
-                 <li> The <i>Death Sex and Money</i> team, for making an incredible <a href="https://www.wnyc.org/shows/deathsexmoney"> show. </a></li>
-                <li> My employer, <a href="http://upstatement.com"> Upstatement, </a> for carving out time for personal projects like this. </li>
-                <li> All my exes — from the flings to the boyfriends. You’ve inspired me to cry, light stuff on fire, be better, and make websites.</li> </ul> 
-            </p><h2 class="subtitle"> Oh, and one more thing </h2>
-            <p class="comment"> Breakups can be wicked hard, so if you’re trapped in a hopeless and paralyzing kind of sadness, you should call a friend who loves you. There are also <a href="http://samaritansnyc.org/24-hour-crisis-hotline/">strangers to call</a> who are ready to listen, and there's no shame in getting help.</p>
-</div>
+        </a>
+    <div class="animate-content">
+    <div class="content-container">
+        <p class="category"> Something to <span class="category-name" id="type"></span></p>
+        <h1 class="suggestion" id="suggestion"></h1>
+        <p class="comment" id="comment"></p>
+        <p class="suggester">Suggested by <span class="name" id="name"></span></p>
+    </div>
+    </div>
+        <button class="next-suggestion js--next-suggestion">Next suggestion</button>
+        <script type="module">
+            import Papa from '../snowpack/pkg/papaparse.js';
+            console.log(Papa);
+        </script>
+        <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="../js/jquery.transit.js"></script>
+        <script type="module" src="../js/app.js"></script>
+    </body>
+</html>

@@ -1,0 +1,5 @@
+{
+  "imports": {
+    "papaparse": "./papaparse.js"
+  }
+}
